@@ -138,7 +138,7 @@
             border-radius: 2px;
         }
 
-        /* كارت العمرة المتميز العريض */
+        /* كارت العمرة المتميز العريض المحدث بجداول */
         .featured-trip {
             background: var(--card-bg);
             border-radius: 16px;
@@ -153,28 +153,42 @@
             color: var(--primary);
             font-size: 26px;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
         }
 
-        .featured-trip ul {
-            list-style: none;
-            margin: 20px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 12px;
-        }
-
-        .featured-trip ul li {
+        /* تصميم الجدول الاحترافي لتنظيم البرنامج */
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            text-align: right;
             font-size: 15px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
         }
 
-        .featured-trip ul li::before {
-            content: '🕋';
-            margin-left: 10px;
+        .program-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px;
+            font-weight: 600;
+            border: 1px solid var(--primary-light);
+        }
+
+        .program-table td {
+            padding: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .program-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .badge-step {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
         }
 
         /* شبكة البرامج الدينية المخصصة */
@@ -337,6 +351,23 @@
             margin-top: 8px;
             letter-spacing: 0.5px;
         }
+
+        @media (max-width: 768px) {
+            .program-table, .program-table tbody, .program-table tr, .program-table td, .program-table th {
+                display: block;
+                width: 100%;
+            }
+            .program-table th {
+                display: none;
+            }
+            .program-table td {
+                text-align: right;
+                border: none;
+                border-bottom: 1px solid #e2e8f0;
+                position: relative;
+                padding-left: 50%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -364,21 +395,49 @@
             <a href="#religious" class="btn" style="width: auto; display: inline-block; padding: 12px 35px;">استعرض برامج العمرة الحالية</a>
         </div>
 
-        <!-- القسم الأول: برنامج العمرة الرئيسي المتميز -->
+        <!-- القسم الأول: برنامج العمرة الرئيسي المتميز منسق داخل جدول واضح ومفهوم -->
         <h2 class="section-title" id="religious">🕋 التخصص والريادة: برامج العمرة والرحلات الدينية</h2>
         
         <div class="featured-trip">
-            <h3>✨ برنامج تيسير الرحمن لرحلات العمرة (الموسم الحالي)</h3>
-            <p style="font-size: 16px; margin-top: 5px; color: var(--text-muted);">نصحبكم في رحلة إيمانية مباركة منظمة بدقة متناهية لنكفل لكم التفرغ الكامل للعبادة والمناسك.</p>
+            <h3>✨ برنامج "تيسير الرحمن" لرحلات العمرة المتكاملة</h3>
+            <p style="font-size: 16px; margin-top: 5px; color: var(--text-muted);">جدول تفصيلي يوضح كافة محطات ومزايا الرحلة من البداية وحتى العودة بسلامة الله:</p>
             
-            <ul>
-                <li><b>التأشيرات والطيران:</b> استخراج فوري لكافة التأشيرات وحجز تذاكر طيران مباشر ذهاب وعودة.</li>
-                <li><b>الفنادق الفاخرة:</b> تسكين متميز في فنادق قريبة جداً من الحرمين الشريفين (مكة المكرمة والمدينة المنورة).</li>
-                <li><b>المزارات الكاملة:</b> جولات ميدانية منظمة لزيارة المعالم الإسلامية والمقدسة برفقة مرشدين.</li>
-                <li><b>الإشراف المتكامل:</b> مشرف ديني وإداري مؤهل مرافق للجروب خطوة بخطوة من الانطلاق وحتى العودة.</li>
-                <li><b>تسهيلات المجموعات:</b> أسعار وخصومات خاصة جداً للمجموعات العائلية والمنسقين الخارجيين.</li>
-                <li><b>هدايا المعتمرين:</b> حقائب لحمل الأمتعة، ومياه زمزم، وكتيبات شرح المناسك لكل معتمر مجاناً.</li>
-            </ul>
+            <table class="program-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">محطة الرحلة</th>
+                        <th style="width: 50%;">الخدمات والتفاصيل المشمولة</th>
+                        <th style="width: 30%;">مستوى التميز والراحة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-step">1️⃣ الإجراءات والطيران</span></td>
+                        <td>استخراج فوري لكافة التأشيرات وحجز تذاكر طيران مباشر (ذهاب وعودة).</td>
+                        <td>مضمونة ومعتمدة بالكامل</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">2️⃣ السكن والتسكين</span></td>
+                        <td>تسكين متميز في فنادق فاخرة وقريبة جداً من الحرمين الشريفين (مكة المكرمة والمدينة المنورة).</td>
+                        <td>قرب تام لتوفير الجهد على المعتمر</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">3️⃣ المزارات والجولات</span></td>
+                        <td>جولات ميدانية منظمة لزيارة المعالم الإسلامية والمقدسة برفقة مرشدين لشرح السيرة.</td>
+                        <td>شاملة كافة الانتقالات الداخلية بـ أتوبيسات حديثة</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">4️⃣ الإشراف والدعم</span></td>
+                        <td>مشرف ديني وإداري مؤهل ومرافق للجروب خطوة بخطوة من الانطلاق وحتى العودة.</td>
+                        <td>رعاية كاملة لضيوف الرحمن على مدار 24 ساعة</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">5️⃣ هدايا وتسهيلات</span></td>
+                        <td>تسهيلات وخصومات خاصة جداً للمجموعات العائلية وقادة المجموعات، بالإضافة لهدايا مجانية (شنط، مياه زمزم، كتيبات مناسك).</td>
+                        <td>دعم خاص وحصري للمنسقين الخارجيين</td>
+                    </tr>
+                </tbody>
+            </table>
             
             <div style="max-width: 400px; margin: 25px auto 0 auto;">
                 <div style="font-size: 18px; font-weight: bold; color: var(--accent); text-align: center; margin-bottom: 10px;">★ أسعار تنافسية وتسهيلات كبرى في السداد ★</div>
@@ -386,8 +445,8 @@
             </div>
         </div>
 
-        <!-- القسم الثاني: بقية المواسم الدينية والحج -->
-        <h2 class="section-title" id="seasons">🌙 تفاصيل وجدولة المواسم الدينية الكبرى</h2>
+        <!-- القسم الثاني: بقية المواسم الدينية والحج وبرنامج تأشيرة وتذكرة -->
+        <h2 class="section-title" id="seasons">🌙 تفاصيل وجدولة المواسم الدينية الكبرى والخدمات الخاصة</h2>
         <div class="trips-grid">
             
             <!-- كارت تنظيم وحجز المواسم الدينية -->
@@ -405,6 +464,24 @@
                 </div>
                 <div style="padding: 0 25px 25px 25px;">
                     <a href="https://wa.me/201001388672?text=مرحباً%20شركة%20الأقصر%20للسياحة،%20أود%20الاستفسار%20والحجز%20في%20المواسم%20والرحلات%20الدينية%20المقبلة." target="_blank" class="btn btn-whatsapp">📱 تواصل معنا للاستعلام والتسجيل في المواسم</a>
+                </div>
+            </div>
+
+            <!-- كارت خدمة تأشيرة وتذكرة -->
+            <div class="trip-card" style="border-top-color: var(--accent);">
+                <div class="trip-body">
+                    <h3>✈️ برنامج (تأشيرة + تذكرة طيران) للأفراد والمنسقين</h3>
+                    <p>للمسافرين الراغبين في حرية الحركة وتنسيق السكن الخاص بهم، أو المنسقين المستقلين، نقدم خدمة مجزأة ومعتمدة بالكامل تشمل:</p>
+                    <ul>
+                        <li><b>إصدار التأشيرة:</b> استخراج سريع ومضمون لتأشيرة العمرة الإلكترونية أو التأشيرات الشخصية والسياحية.</li>
+                        <li><b>حجز الطيران الباركود:</b> حجز مؤكد لتذاكر الطيران (ذهاب وعودة) على الخطوط المباشرة مع تفعيل الباركود الرسمي للمعتمرين.</li>
+                        <li><b>مرونة تامة:</b> البرنامج لا يشمل الفنادق أو الانتقالات الداخلية، مما يعطيك الحرية الكاملة لترتيب رحلتك بنفسك.</li>
+                        <li><b>دعم المنسقين:</b> أسعار خاصة جداً للمنسقين الخارجيين عند حجز كميات من التأشيرات والتذاكر لمجموعاتهم.</li>
+                    </ul>
+                    <div class="trip-price">أسعار تنافسية وحجز فوري للتذاكر والتأشيرات</div>
+                </div>
+                <div style="padding: 0 25px 25px 25px;">
+                    <a href="https://wa.me/201001388672?text=مرحباً%20شركة%20الأقصر%20للسياحة،%20أود%20الاستفسار%20عن%20أسعار%20وتفاصيل%20برنامج%20(تأشيرة%20+%20تذكرة%20طيران)%20لعمرة%20الفترة%20الحالية." target="_blank" class="btn btn-whatsapp">📱 احجز (تأشيرة + تذكرة) مباشرة عبر الواتساب</a>
                 </div>
             </div>
 
@@ -437,6 +514,7 @@
                         <label>نوع ونوعية الفوج السياحي</label>
                         <select id="tour_type">
                             <option>رحلة عمرة (طيران مباشر)</option>
+                            <option>برنامج (تأشيرة + تذكرة طيران)</option>
                             <option>رحلة عمرة (موسم رجب / شعبان / رمضان)</option>
                             <option>مواسم الحج والزيارات الدينية</option>
                         </select>
