@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الأقصر للسياحة | المتخصصون في رحلات العمرة والبرامج الدينية</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #cca43b;
+            --accent-hover: #b38f2e;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-muted: #64748b;
+            --success: #25d366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* شريط التنقل */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: white;
+        }
+        .logo h1 span {
+            color: var(--accent);
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav a {
+                margin: 0 8px;
+                font-size: 13px;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* الواجهة الرئيسية */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.92)), url('https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1200') no-repeat center/cover;
+            color: white;
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-right: 6px solid var(--accent);
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            color: #e2e8f0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: var(--primary);
+            margin: 50px 0 30px 0;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* كارت العمرة المتميز العريض */
+        .featured-trip {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border: 2px solid var(--accent);
+            margin-bottom: 40px;
+            padding: 35px;
+        }
+
+        .featured-trip h3 {
+            color: var(--primary);
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        /* تصميم الجدول الاحترافي لتنظيم البرنامج */
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            text-align: right;
+            font-size: 15px;
+        }
+
+        .program-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px;
+            font-weight: 600;
+            border: 1px solid var(--primary-light);
+        }
+
+        .program-table td {
+            padding: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .program-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .badge-step {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        /* شبكة البرامج الدينية المخصصة */
+        .trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .trip-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .trip-body {
+            padding: 25px;
+        }
+
+        .trip-body h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .trip-body ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .trip-body ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .trip-body ul li::before {
+            content: '✨';
+            margin-left: 8px;
+        }
+
+        .trip-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent);
+            margin-top: 15px;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 10px;
+        }
+
+        /* شبكة الاستمارات التفاعلية للبوابة الذكية */
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .admin-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-right: 5px solid var(--primary);
+        }
+
+        .admin-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* عناصر الاستمارات */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        /* حاسبة التكلفة المدمجة */
+        .calc-result-box {
+            background-color: #f1f5f9;
+            border: 2px dashed var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .btn {
+            display: block;
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: bold;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--success);
+            color: white;
+            margin-top: 15px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1fad4e;
+        }
+
+        .info-box {
+            background-color: #1e293b;
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: var(--primary);
+            color: #94a3b8;
+            font-size: 14px;
+            border-top: 4px solid var(--accent);
+        }
+        
+        footer p {
+            margin-bottom: 5px;
+        }
+        
+        footer .credits {
+            font-size: 13px;
+            color: var(--accent);
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .program-table, .program-table tbody, .program-table tr, .program-table td, .program-table th {
+                display: block;
+                width: 100%;
+            }
+            .program-table th {
+                display: none;
+            }
+            .program-table td {
+                text-align: right;
+                border: none;
+                border-bottom: 1px solid #e2e8f0;
+                position: relative;
+                padding-left: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>شركة <span>الأقصر للسياحة</span></h1>
+            </div>
+            <nav>
+                <a href="#about">الرئيسية</a>
+                <a href="#religious">برامج العمرة</a>
+                <a href="#seasons">المواسم الدينية</a>
+                <a href="#interactive-gate">بوابة المعتمر الذكية</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- الواجهة الترحيبية -->
+        <div class="hero" id="about">
+            <h2>مرحباً بكم في شركة الأقصر للسياحة والرحلات الدينية</h2>
+            <p>وجهتكم المعتمدة والأولى لتنظيم رحلات العمرة والمواسم الدينية بأعلى معايير التيسير والراحة لضيوف الرحمن لكافة عملائنا وقادة المجموعات.</p>
+            <a href="#religious" class="btn" style="width: auto; display: inline-block; padding: 12px 35px;">استعرض برامج العمرة الحالية</a>
+        </div>
+
+        <!-- برامج العمرة الرئيسية -->
+        <h2 class="section-title" id="religious">🕋 التخصص والريادة: برامج العمرة والرحلات الدينية</h2>
+        
+        <div class="featured-trip">
+            <h3>✨ برنامج "تيسير الرحمن" لرحلات العمرة المتكاملة</h3>
+            <p style="font-size: 16px; margin-top: 5px; color: var(--text-muted);">جدول تفصيلي يوضح كافة محطات ومزايا الرحلة من البداية وحتى العودة بسلامة الله:</p>
+            
+            <table class="program-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">محطة الرحلة</th>
+                        <th style="width: 50%;">الخدمات والتفاصيل المشمولة</th>
+                        <th style="width: 30%;">مستوى التميز والراحة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-step">1️⃣ الإجراءات والطيران</span></td>
+                        <td>استخراج فوري لكافة التأشيرات وحجز تذاكر طيران مباشر (ذهاب وعودة).</td>
+                        <td>مضمونة ومعتمدة بالكامل</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">2️⃣ السكن والتسكين</span></td>
+                        <td>تسكين متميز في فنادق فاخرة وقريبة جداً من الحرمين الشريفين (مكة المكرمة والمدينة المنورة).</td>
+                        <td>قرب تام لتوفير الجهد على المعتمر</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">3️⃣ المزارات والجولات</span></td>
+                        <td>جولات ميدانية منظمة لزيارة المعالم الإسلامية والمقدسة برفقة مرشدين لشرح السيرة.</td>
+                        <td>شاملة كافة انتقال الدلخية بـ أتوبيسات حديثة</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">4️⃣ الإشراف والدعم</span></td>
+                        <td>مشرف ديني وإداري مؤهل ومرافق للجروب خطوة بخطوة من الانطلاق وحتى العودة.</td>
+                        <td>رعاية كاملة لضيوف الرحمن على مدار 24 ساعة</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-step">5️⃣ هدايا وتسهيلات</span></td>
+                        <td>تسهيلات وخصومات خاصة جداً للمجموعات العائلية وقادة المجموعات، بالإضافة لهدايا مجانية (شنط، مياه زمزم، كتيبات مناسك).</td>
+                        <td>دعم خاص وحصري للمنسقين الخارجيين</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="max-width: 400px; margin: 25px auto 0 auto;">
+                <div style="font-size: 18px; font-weight: bold; color: var(--accent); text-align: center; margin-bottom: 10px;">★ أسعار تنافسية وتسهيلات كبرى في السداد ★</div>
+                <a href="https://wa.me/201001388672?text=مرحباً%20شركة%20الأقصر%20للسياحة،%20أود%20الاستفسار%20عن%20مواعيد%20وأسعار%20الفوج%20القادم%20لرحلة%20العمرة." target="_blank" class="btn btn-whatsapp">📱 للاستعلام وحجز مقعدك في الفوج القادم عبر الواتساب</a>
+            </div>
+        </div>
+
+        <!-- المواسم والخدمات الخاصة -->
+        <h2 class="section-title" id="seasons">🌙 تفاصيل وجدولة المواسم الدينية الكبرى والخدمات الخاصة</h2>
+        <div class="trips-grid">
+            
+            <!-- كارت المواسم -->
+            <div class="trip-card">
+                <div class="trip-body">
+                    <h3>🕋 جدول الرحلات والمواسم الدينية الرسمية</h3>
+                    <p>نعمل على مدار العام لتجهيز وتنسيق رحلات المجموعات والمنسقين في كافة المناسبات والمواسم المباركة التالية:</p>
+                    <ul>
+                        <li><b>موسم الحج السياحي:</b> تنظيم شامل لبرامج الحج (الاقتصادي، البري، والفاخر) فور فتح باب التسجيل.</li>
+                        <li><b>موسم المولد النبوي الشريف:</b> انطلاق أفواج رحلات عمرة المولد النبوي الشريف بتسهيلات كبرى للجروبات.</li>
+                        <li><b>عمرة المواسم المباركة:</b> رحلات مخصصة ومنظمة خلال أشهر (رجب، شعبان، ورحلات عمرة شهر رمضان المبارك).</li>
+                        <li><b>التنسيق المسبق للجروبات:</b> تأمين مبكر لغرف الفنادق وتذاكر الطيران لضمان أفضل سعر للمجموعات.</li>
+                    </ul>
+                    <div class="trip-price">متاح الحجز والاستعلام والتسجيل المبدئي لكافة المواسم الآن</div>
+                </div>
+                <div style="padding: 0 25px 25px 25px;">
+                    <a href="https://wa.me/201001388672?text=مرحباً%20شركة%20الأقصر%20للسياحة،%20أود%20الاستفسار%20والحجز%20في%20المواسم%20والرحلات%20الدينية%20المقبلة." target="_blank" class="btn btn-whatsapp">📱 تواصل معنا للاستعلام والتسجيل في المواسم</a>
+                </div>
+            </div>
+
+            <!-- كارت تأشيرة وتذكرة -->
+            <div class="trip-card" style="border-top-color: var(--accent);">
+                <div class="trip-body">
+                    <h3>✈️ برنامج (تأشيرة + تذكرة طيران) للأفراد والمنسقين</h3>
+                    <p>للمسافرين الراغبين في حرية الحركة وتنسيق السكن الخاص بهم، أو المنسقين المستقلين، نقدم خدمة مجزأة ومعتمدة بالكامل تشمل:</p>
+                    <ul>
+                        <li><b>إصدار التأشيرة:</b> استخراج سريع ومضمون لتأشيرة العمرة الإلكترونية أو التأشيرات الشخصية والسياحية.</li>
+                        <li><b>حجز الطيران الباركود:</b> حجز مؤكد لتذاكر الطيران (ذهاب وعودة) على الخطوط المباشرة مع تفعيل الباركود الرسمي للمعتمرين.</li>
+                        <li><b>مرونة تامة:</b> البرنامج لا يشمل الفنادق أو الانتقالات الداخلية، مما يعطيك الحرية الكاملة لترتيب رحلتك بنفسك.</li>
+                        <li><b>دعم المنسقين:</b> أسعار خاصة جداً للمنسقين الخارجيين عند حجز كميات من التأشيرات والتذاكر لمجموعاتهم.</li>
+                    </ul>
+                    <div class="trip-price">أسعار تنافسية وحجز فوري للتذاكر والتأشيرات</div>
+                </div>
+                <div style="padding: 0 25px 25px 25px;">
+                    <a href="https://wa.me/201001388672?text=مرحباً%20شركة%20الأقصر%20للسياحة،%20أود%20الاستفسار%20عن%20أسعار%20وتفاصيل%20برنامج%20(تأشيرة%20+%20تذكرة%20طيران)%20لعمرة%20الفترة%20الحالية." target="_blank" class="btn btn-whatsapp">📱 احجز (تأشيرة + تذكرة) مباشرة عبر الواتساب</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- بوابة المعتمر الذكية -->
+        <h2 class="section-title" id="interactive-gate">📋 بوابة المعتمر الذكية للحجوزات وحساب التكلفة</h2>
+        <div class="admin-grid">
+            
+            <!-- حاسبة العمرة التفاعلية -->
+            <div class="admin-card">
+                <h3>🧮 احسب تكلفة عمرتك بنفسك</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">اختر تفاصيل رحلتك لمعرفة التكلفة المبدئية التقديرية وإرسال طلب الحجز فوراً للمكتب.</p>
+                
+                <div class="form-group">
+                    <label>الاسم الكريم</label>
+                    <input type="text" id="calc_name" placeholder="أدخل اسمك الكريم" required>
+                </div>
+                <div class="form-group">
+                    <label>نوع الباقة المطلوبة</label>
+                    <select id="calc_package" onchange="calculateOmrahPrice();">
+                        <option value="كاملة">رحلة عمرة متكاملة (تيسير الرحمن)</option>
+                        <option value="تأشيرة">برنامج مستقل (تأشيرة + تذكرة فقط)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>عدد الأفراد المسافرين</label>
+                    <input type="number" id="calc_count" value="1" min="1" oninput="calculateOmrahPrice();" required>
+                </div>
+                <div class="form-group">
+                    <label>نوع الغرفة والتسكين المفضّل</label>
+                    <select id="calc_room" onchange="calculateOmrahPrice();">
+                        <option value="رباعي">تسكين في غرفة رباعية (اقتصادي وموفر)</option>
+                        <option value="ثلاثي">تسكين في غرفة ثلاثية</option>
+                        <option value="ثنائي">تسكين في غرفة ثنائية (خاص ومميز)</option>
+                    </select>
+                </div>
+
+                <div class="calc-result-box" id="calc_result_display">
+                    التكلفة المبدئية: يرجى تعبئة الحقول للاحتساب
+                </div>
+
+                <button class="btn" style="background-color: var(--primary); color: white;" onclick="sendCalculatedBooking();">✨ احجز التكلفة المحسوبة عبر الواتساب</button>
+            </div>
+
+            <!-- استمارة الميزانية الخاصة -->
+            <div class="admin-card" style="border-right-color: var(--accent);">
+                <h3>🎯 حدد ميزانيتك (عمرتك على مقاسك)</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">هل لديك ميزانية محددة وتود الحصول على برنامج مثالي متفصل على أساسها؟ املأ البيانات وسنتواصل معك فوراً.</p>
+                <form onsubmit="event.preventDefault(); handleBudgetBookingForm();">
+                    <div class="form-group">
+                        <label>الاسم الارتكازي</label>
+                        <input type="text" id="budget_user_name" placeholder="أدخل اسمك بالكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label>عدد الأفراد المستهدفين</label>
+                        <input type="number" id="budget_people_count" placeholder="مثال: 3 أفراد" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الميزانية الإجمالية التقريبية المتاحة (بالجنيه)</label>
+                        <input type="text" id="budget_amount" placeholder="مثال: 50,000 جنيه" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الشهر المفضل والمقترح للسفر</label>
+                        <select id="budget_month">
+                            <option>الفوج القادم فوراً</option>
+                            <option>شهر المولد النبوي</option>
+                            <option>شهر رجب المبارك</option>
+                            <option>شهر شعبان</option>
+                            <option>شهر رمضان المبارك</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" style="background-color: var(--success); color: white;">✈️ أرسل تفاصيل ميزانيتك لتصميم برنامجك</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- تفاصيل الفرع الرئيسي للشركة -->
+        <div class="info-box">
+            <h3>📍 الفرع الرئيسي المعتمد</h3>
+            <p style="margin: 10px 0 20px 0; color: #cbd5e1;">أبو قرقاص - 05 شارع العجايبي - شركة الأقصر للسياحة والعمرة.</p>
+            <p>مكتبكم الموثوق لخدمة ضيوف الرحمن وتنسيق الرحلات على مدار العام. للتواصل المباشر: 201001388672+</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>All Rights Reserved © 2026 | Luxor for Tourism</p>
+        <p class="credits">Developed by: Mr. Abdallah Saleh - Director of Luxor for Tourism</p>
+    </footer>
+
+    <script>
+        // دالة الحساب التلقائي والتفاعلي
+        function calculateOmrahPrice() {
+            var packageType = document.getElementById('calc_package').value;
+            var count = parseInt(document.getElementById('calc_count').value) || 1;
+            var roomType = document.getElementById('calc_room').value;
+            
+            var basePricePerPerson = 30000; 
+            
+            if (packageType === "تأشيرة") {
+                basePricePerPerson = 18000; 
+            } else {
+                if (roomType === "ثلاثي") basePricePerPerson += 4000;
+                if (roomType === "ثنائي") basePricePerPerson += 8000;
+            }
+            
+            var total = basePricePerPerson * count;
+            document.getElementById('calc_result_display').innerText = "التكلفة التقريبية لـ (" + count + " أفراد): " + total.toLocaleString() + " جنيه مصري";
+            return total;
+        }
+
+        // إرسال نتيجة الحاسبة التفاعلية إلى الواتساب
+        function sendCalculatedBooking() {
+            var name = document.getElementById('calc_name').value;
+            var packageType = document.getElementById('calc_package').value;
+            var count = document.getElementById('calc_count').value;
+            var roomType = document.getElementById('calc_room').value;
+            
+            if (name == "") {
+                alert("برجاء كتابة اسمك الكريم أولاً!");
+                return;
+            }
+            
+            calculateOmrahPrice(); 
+            var resultText = document.getElementById('calc_result_display').innerText;
+            
+            var message = "استعلام وحجز عبر حاسبة الموقع المباشرة %0Aالاسم: " + name + " %0Aالباقة: " + packageType + " %0Aعدد الأفراد: " + count + " %0Aنوع الغرفة: " + roomType + " %0A" + resultText;
+            var whatsappUrl = "https://wa.me/201001388672?text=" + message;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // إرسال استمارة الميزانية إلى الواتساب
+        function handleBudgetBookingForm() {
+            var name = document.getElementById('budget_user_name').value;
+            var people = document.getElementById('budget_people_count').value;
+            var budget = document.getElementById('budget_amount').value;
+            var month = document.getElementById('budget_month').value;
+            
+            var message = "طلب تصميم برنامج عمرة على مقاس الميزانية %0Aالاسم: " + name + " %0Aعدد الأفراد: " + people + " %0Aالميزانية المرصودة: " + budget + " %0Aالشهر المقترح: " + month;
+            var whatsappUrl = "https://wa.me/201001388672?text=" + message;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        window.onload = function() {
+            calculateOmrahPrice();
+        };
+    </script>
+
+</body>
+</html>
