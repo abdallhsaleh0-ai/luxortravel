@@ -138,7 +138,7 @@
             border-radius: 2px;
         }
 
-        /* كارت العمرة المتميز العريض المحدث بجداول */
+        /* كارت العمرة المتميز العريض */
         .featured-trip {
             background: var(--card-bg);
             border-radius: 16px;
@@ -248,7 +248,7 @@
             padding-top: 10px;
         }
 
-        /* شبكة الإدارة والمنسقين */
+        /* شبكة الاستمارات التفاعلية للبوابة الذكية */
         .admin-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -288,6 +288,19 @@
             border-radius: 8px;
             box-sizing: border-box;
             font-size: 14px;
+        }
+
+        /* حاسبة التكلفة المدمجة */
+        .calc-result-box {
+            background-color: #f1f5f9;
+            border: 2px dashed var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 16px;
         }
 
         .btn {
@@ -381,21 +394,21 @@
                 <a href="#about">الرئيسية</a>
                 <a href="#religious">برامج العمرة</a>
                 <a href="#seasons">المواسم الدينية</a>
-                <a href="#coordinators">لوحة المنسقين</a>
+                <a href="#interactive-gate">بوابة المعتمر الذكية</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
         
-        <!-- القسم الرئيسي الاحترافي الموجه للدين فقط -->
+        <!-- الواجهة الترحيبية -->
         <div class="hero" id="about">
             <h2>مرحباً بكم في شركة الأقصر للسياحة والرحلات الدينية</h2>
             <p>وجهتكم المعتمدة والأولى لتنظيم رحلات العمرة والمواسم الدينية بأعلى معايير التيسير والراحة لضيوف الرحمن لكافة عملائنا وقادة المجموعات.</p>
             <a href="#religious" class="btn" style="width: auto; display: inline-block; padding: 12px 35px;">استعرض برامج العمرة الحالية</a>
         </div>
 
-        <!-- القسم الأول: برنامج العمرة الرئيسي المتميز منسق داخل جدول واضح ومفهوم -->
+        <!-- برامج العمرة الرئيسية -->
         <h2 class="section-title" id="religious">🕋 التخصص والريادة: برامج العمرة والرحلات الدينية</h2>
         
         <div class="featured-trip">
@@ -424,7 +437,7 @@
                     <tr>
                         <td><span class="badge-step">3️⃣ المزارات والجولات</span></td>
                         <td>جولات ميدانية منظمة لزيارة المعالم الإسلامية والمقدسة برفقة مرشدين لشرح السيرة.</td>
-                        <td>شاملة كافة الانتقالات الداخلية بـ أتوبيسات حديثة</td>
+                        <td>شاملة كافة انتقال الدلخية بـ أتوبيسات حديثة</td>
                     </tr>
                     <tr>
                         <td><span class="badge-step">4️⃣ الإشراف والدعم</span></td>
@@ -445,11 +458,11 @@
             </div>
         </div>
 
-        <!-- القسم الثاني: بقية المواسم الدينية والحج وبرنامج تأشيرة وتذكرة -->
+        <!-- المواسم والخدمات الخاصة -->
         <h2 class="section-title" id="seasons">🌙 تفاصيل وجدولة المواسم الدينية الكبرى والخدمات الخاصة</h2>
         <div class="trips-grid">
             
-            <!-- كارت تنظيم وحجز المواسم الدينية -->
+            <!-- كارت المواسم -->
             <div class="trip-card">
                 <div class="trip-body">
                     <h3>🕋 جدول الرحلات والمواسم الدينية الرسمية</h3>
@@ -467,7 +480,7 @@
                 </div>
             </div>
 
-            <!-- كارت خدمة تأشيرة وتذكرة -->
+            <!-- كارت تأشيرة وتذكرة -->
             <div class="trip-card" style="border-top-color: var(--accent);">
                 <div class="trip-body">
                     <h3>✈️ برنامج (تأشيرة + تذكرة طيران) للأفراد والمنسقين</h3>
@@ -487,52 +500,83 @@
 
         </div>
 
-        <!-- ثالثاً: نظام الإدارة والمنسقين وقادة المجموعات -->
-        <h2 class="section-title" id="coordinators">💼 الإدارة الذكية وبوابة منسقي الجروبات</h2>
+        <!-- بوابة المعتمر الذكية -->
+        <h2 class="section-title" id="interactive-gate">📋 بوابة المعتمر الذكية للحجوزات وحساب التكلفة</h2>
         <div class="admin-grid">
             
+            <!-- حاسبة العمرة التفاعلية -->
             <div class="admin-card">
-                <h3>👥 بوابة المنسقين وقادة الجروبات</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">المنطقة المخصصة لشركائنا منسقي الرحلات لرفع ومتابعة بيانات وثائق المعتمرين والعملاء لإرسالها فوراً للإدارة.</p>
+                <h3>🧮 احسب تكلفة عمرتك بنفسك</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">اختر تفاصيل رحلتك لمعرفة التكلفة المبدئية التقديرية وإرسال طلب الحجز فوراً للمكتب.</p>
                 
                 <div class="form-group">
-                    <label>اسم المنسق المعتمد</label>
-                    <input type="text" id="coordinator_name" placeholder="أدخل اسمك أو كودك">
+                    <label>الاسم الكريم</label>
+                    <input type="text" id="calc_name" placeholder="أدخل اسمك الكريم" required>
                 </div>
                 <div class="form-group">
-                    <label>كود المجموعة التابعة (Group Code)</label>
-                    <input type="text" id="group_code" placeholder="مثال: LUX-2026-OMRAH">
+                    <label>نوع الباقة المطلوبة</label>
+                    <select id="calc_package" onchange="calculateOmrahPrice();">
+                        <option value="كاملة">رحلة عمرة متكاملة (تيسير الرحمن)</option>
+                        <option value="تأشيرة">برنامج مستقل (تأشيرة + تذكرة فقط)</option>
+                    </select>
                 </div>
-                <button class="btn" onclick="sendCoordinatorData();">🔓 إرسال بيانات المنسق للمكتب الرئيسي</button>
+                <div class="form-group">
+                    <label>عدد الأفراد المسافرين</label>
+                    <input type="number" id="calc_count" value="1" min="1" oninput="calculateOmrahPrice();" required>
+                </div>
+                <div class="form-group">
+                    <label>نوع الغرفة والتسكين المفضّل</label>
+                    <select id="calc_room" onchange="calculateOmrahPrice();">
+                        <option value="رباعي">تسكين في غرفة رباعية (اقتصادي وموفر)</option>
+                        <option value="ثلاثي">تسكين في غرفة ثلاثية</option>
+                        <option value="ثنائي">تسكين في غرفة ثنائية (خاص ومميز)</option>
+                    </select>
+                </div>
+
+                <div class="calc-result-box" id="calc_result_display">
+                    التكلفة المبدئية: يرجى تعبئة الحقول للاحتساب
+                </div>
+
+                <button class="btn" style="background-color: var(--primary); color: white;" onclick="sendCalculatedBooking();">✨ احجز التكلفة المحسوبة عبر الواتساب</button>
             </div>
 
+            <!-- استمارة الميزانية الخاصة -->
             <div class="admin-card" style="border-right-color: var(--accent);">
-                <h3>✈️ جدولة البرامج وتحديث الأفواج (المكتب الرئيسي)</h3>
-                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">خاص بإدارة فروع شركة الأقصر للسياحة لتعديل وإدراج مواعيد انطلاق الرحلات الدينية على السيستم ومزامنتها.</p>
-                <form onsubmit="event.preventDefault(); handleAdminForm();">
+                <h3>🎯 حدد ميزانيتك (عمرتك على مقاسك)</h3>
+                <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">هل لديك ميزانية محددة وتود الحصول على برنامج مثالي متفصل على أساسها؟ املأ البيانات وسنتواصل معك فوراً.</p>
+                <form onsubmit="event.preventDefault(); handleBudgetBookingForm();">
                     <div class="form-group">
-                        <label>نوع ونوعية الفوج السياحي</label>
-                        <select id="tour_type">
-                            <option>رحلة عمرة (طيران مباشر)</option>
-                            <option>برنامج (تأشيرة + تذكرة طيران)</option>
-                            <option>رحلة عمرة (موسم رجب / شعبان / رمضان)</option>
-                            <option>مواسم الحج والزيارات الدينية</option>
+                        <label>الاسم الارتكازي</label>
+                        <input type="text" id="budget_user_name" placeholder="أدخل اسمك بالكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <label>عدد الأفراد المستهدفين</label>
+                        <input type="number" id="budget_people_count" placeholder="مثال: 3 أفراد" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الميزانية الإجمالية التقريبية المتاحة (بالجنيه)</label>
+                        <input type="text" id="budget_amount" placeholder="مثال: 50,000 جنيه" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الشهر المفضل والمقترح للسفر</label>
+                        <select id="budget_month">
+                            <option>الفوج القادم فوراً</option>
+                            <option>شهر المولد النبوي</option>
+                            <option>شهر رجب المبارك</option>
+                            <option>شهر شعبان</option>
+                            <option>شهر رمضان المبارك</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>تاريخ التجمع وانطلاق الفوج</label>
-                        <input type="date" id="tour_date">
-                    </div>
-                    <button type="submit" class="btn">💾 اعتماد وحفظ التغييرات فوراً</button>
+                    <button type="submit" class="btn" style="background-color: var(--success); color: white;">✈️ أرسل تفاصيل ميزانيتك لتصميم برنامجك</button>
                 </form>
             </div>
 
         </div>
 
-        <!-- فرع الشركة الرئيسي -->
+        <!-- تفاصيل الفرع الرئيسي للشركة -->
         <div class="info-box">
             <h3>📍 الفرع الرئيسي المعتمد</h3>
-            <p style="margin: 10px 0 20px 0; color: #cbd5e1;">أبو قرقاص - 05 شارع العجايبي - شركة الأقصر للسياحة والعمرة</p>
+            <p style="margin: 10px 0 20px 0; color: #cbd5e1;">أبو قرقاص - 05 شارع العجايبي - شركة الأقصر للسياحة والعمرة.</p>
             <p>مكتبكم الموثوق لخدمة ضيوف الرحمن وتنسيق الرحلات على مدار العام. للتواصل المباشر: 201001388672+</p>
         </div>
 
@@ -544,35 +588,63 @@
     </footer>
 
     <script>
-        function sendCoordinatorData() {
-            var name = document.getElementById('coordinator_name').value;
-            var code = document.getElementById('group_code').value;
+        // دالة الحساب التلقائي والتفاعلي
+        function calculateOmrahPrice() {
+            var packageType = document.getElementById('calc_package').value;
+            var count = parseInt(document.getElementById('calc_count').value) || 1;
+            var roomType = document.getElementById('calc_room').value;
             
-            if(name == "" || code == "") {
-                alert("برجاء إدخال اسم المنسق وكود المجموعة أولاً!");
+            var basePricePerPerson = 30000; 
+            
+            if (packageType === "تأشيرة") {
+                basePricePerPerson = 18000; 
+            } else {
+                if (roomType === "ثلاثي") basePricePerPerson += 4000;
+                if (roomType === "ثنائي") basePricePerPerson += 8000;
+            }
+            
+            var total = basePricePerPerson * count;
+            document.getElementById('calc_result_display').innerText = "التكلفة التقريبية لـ (" + count + " أفراد): " + total.toLocaleString() + " جنيه مصري";
+            return total;
+        }
+
+        // إرسال نتيجة الحاسبة التفاعلية إلى الواتساب
+        function sendCalculatedBooking() {
+            var name = document.getElementById('calc_name').value;
+            var packageType = document.getElementById('calc_package').value;
+            var count = document.getElementById('calc_count').value;
+            var roomType = document.getElementById('calc_room').value;
+            
+            if (name == "") {
+                alert("برجاء كتابة اسمك الكريم أولاً!");
                 return;
             }
             
-            var message = "مرحباً الأقصر للسياحة، أنا المنسق: " + name + " %0Aأريد تسجيل الدخول ومراجعة بيانات المجموعة ذات الكود: " + code;
+            calculateOmrahPrice(); 
+            var resultText = document.getElementById('calc_result_display').innerText;
+            
+            var message = "استعلام وحجز عبر حاسبة الموقع المباشرة %0Aالاسم: " + name + " %0Aالباقة: " + packageType + " %0Aعدد الأفراد: " + count + " %0Aنوع الغرفة: " + roomType + " %0A" + resultText;
             var whatsappUrl = "https://wa.me/201001388672?text=" + message;
             
             window.open(whatsappUrl, '_blank');
         }
 
-        function handleAdminForm() {
-            var type = document.getElementById('tour_type').value;
-            var date = document.getElementById('tour_date').value;
+        // إرسال استمارة الميزانية إلى الواتساب
+        function handleBudgetBookingForm() {
+            var name = document.getElementById('budget_user_name').value;
+            var people = document.getElementById('budget_people_count').value;
+            var budget = document.getElementById('budget_amount').value;
+            var month = document.getElementById('budget_month').value;
             
-            if(date == "") {
-                alert("برجاء تحديد التاريخ أولاً!");
-                return;
-            }
-            
-            var message = "تعديل إداري جديد لشركة الأقصر %0Aالبرنامج: " + type + " %0Aتاريخ الانطلاق المعتمد: " + date;
+            var message = "طلب تصميم برنامج عمرة على مقاس الميزانية %0Aالاسم: " + name + " %0Aعدد الأفراد: " + people + " %0Aالميزانية المرصودة: " + budget + " %0Aالشهر المقترح: " + month;
             var whatsappUrl = "https://wa.me/201001388672?text=" + message;
             
             window.open(whatsappUrl, '_blank');
         }
+
+        window.onload = function() {
+            calculateOmrahPrice();
+        };
     </script>
 
 </body>
